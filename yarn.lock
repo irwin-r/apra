@@ -1903,7 +1903,7 @@
   dependencies:
     "@types/yargs-parser" "*"
 
-"@typescript-eslint/eslint-plugin@^4.5.0":
+"@typescript-eslint/eslint-plugin@^4.5.0", "@typescript-eslint/eslint-plugin@^4.7.0":
   version "4.18.0"
   resolved "https://packages.atlassian.com/api/npm/npm-remote/@typescript-eslint/eslint-plugin/-/eslint-plugin-4.18.0.tgz#50fbce93211b5b690895d20ebec6fe8db48af1f6"
   integrity sha1-UPvOkyEbW2kIldIOvsb+jbSK8fY=
@@ -1940,7 +1940,7 @@
     eslint-scope "^5.0.0"
     eslint-utils "^2.0.0"
 
-"@typescript-eslint/parser@^4.5.0":
+"@typescript-eslint/parser@^4.5.0", "@typescript-eslint/parser@^4.7.0":
   version "4.18.0"
   resolved "https://packages.atlassian.com/api/npm/npm-remote/@typescript-eslint/parser/-/parser-4.18.0.tgz#a211edb14a69fc5177054bec04c95b185b4dde21"
   integrity sha1-ohHtsUpp/FF3BUvsBMlbGFtN3iE=
@@ -4554,6 +4554,46 @@ escodegen@^2.0.0:
   optionalDependencies:
     source-map "~0.6.1"
 
+eslint-config-airbnb-base@^14.2.1:
+  version "14.2.1"
+  resolved "https://packages.atlassian.com/api/npm/npm-remote/eslint-config-airbnb-base/-/eslint-config-airbnb-base-14.2.1.tgz#8a2eb38455dc5a312550193b319cdaeef042cd1e"
+  integrity sha1-ii6zhFXcWjElUBk7MZza7vBCzR4=
+  dependencies:
+    confusing-browser-globals "^1.0.10"
+    object.assign "^4.1.2"
+    object.entries "^1.1.2"
+
+eslint-config-airbnb-typescript-prettier@^4.2.0:
+  version "4.2.0"
+  resolved "https://packages.atlassian.com/api/npm/npm-remote/eslint-config-airbnb-typescript-prettier/-/eslint-config-airbnb-typescript-prettier-4.2.0.tgz#54101963a3ec868c04d2f685f9ffcf04052d5cea"
+  integrity sha1-VBAZY6PshowE0vaF+f/PBAUtXOo=
+  dependencies:
+    "@typescript-eslint/eslint-plugin" "^4.7.0"
+    "@typescript-eslint/parser" "^4.7.0"
+    eslint-config-airbnb "^18.2.1"
+    eslint-config-prettier "^6.15.0"
+    eslint-plugin-import "^2.22.1"
+    eslint-plugin-jsx-a11y "^6.4.1"
+    eslint-plugin-prettier "^3.1.4"
+    eslint-plugin-react "^7.21.5"
+    eslint-plugin-react-hooks "^4.2.0"
+
+eslint-config-airbnb@^18.2.1:
+  version "18.2.1"
+  resolved "https://packages.atlassian.com/api/npm/npm-remote/eslint-config-airbnb/-/eslint-config-airbnb-18.2.1.tgz#b7fe2b42f9f8173e825b73c8014b592e449c98d9"
+  integrity sha1-t/4rQvn4Fz6CW3PIAUtZLkScmNk=
+  dependencies:
+    eslint-config-airbnb-base "^14.2.1"
+    object.assign "^4.1.2"
+    object.entries "^1.1.2"
+
+eslint-config-prettier@^6.15.0:
+  version "6.15.0"
+  resolved "https://packages.atlassian.com/api/npm/npm-remote/eslint-config-prettier/-/eslint-config-prettier-6.15.0.tgz#7f93f6cb7d45a92f1537a70ecc06366e1ac6fed9"
+  integrity sha1-f5P2y31FqS8VN6cOzAY2bhrG/tk=
+  dependencies:
+    get-stdin "^6.0.0"
+
 eslint-config-react-app@^6.0.0:
   version "6.0.0"
   resolved "https://packages.atlassian.com/api/npm/npm-remote/eslint-config-react-app/-/eslint-config-react-app-6.0.0.tgz#ccff9fc8e36b322902844cbd79197982be355a0e"
@@ -4611,7 +4651,7 @@ eslint-plugin-jest@^24.1.0:
   dependencies:
     "@typescript-eslint/experimental-utils" "^4.0.1"
 
-eslint-plugin-jsx-a11y@^6.3.1:
+eslint-plugin-jsx-a11y@^6.3.1, eslint-plugin-jsx-a11y@^6.4.1:
   version "6.4.1"
   resolved "https://packages.atlassian.com/api/npm/npm-remote/eslint-plugin-jsx-a11y/-/eslint-plugin-jsx-a11y-6.4.1.tgz#a2d84caa49756942f42f1ffab9002436391718fd"
   integrity sha1-othMqkl1aUL0Lx/6uQAkNjkXGP0=
@@ -4627,6 +4667,13 @@ eslint-plugin-jsx-a11y@^6.3.1:
     has "^1.0.3"
     jsx-ast-utils "^3.1.0"
     language-tags "^1.0.5"
+
+eslint-plugin-prettier@^3.1.4:
+  version "3.3.1"
+  resolved "https://packages.atlassian.com/api/npm/npm-remote/eslint-plugin-prettier/-/eslint-plugin-prettier-3.3.1.tgz#7079cfa2497078905011e6f82e8dd8453d1371b7"
+  integrity sha1-cHnPoklweJBQEeb4Lo3YRT0Tcbc=
+  dependencies:
+    prettier-linter-helpers "^1.0.0"
 
 eslint-plugin-react-hooks@^4.2.0:
   version "4.2.0"
@@ -4701,7 +4748,7 @@ eslint-webpack-plugin@^2.5.2:
     micromatch "^4.0.2"
     schema-utils "^3.0.0"
 
-eslint@^7.11.0:
+eslint@^7.11.0, eslint@^7.22.0:
   version "7.22.0"
   resolved "https://packages.atlassian.com/api/npm/npm-remote/eslint/-/eslint-7.22.0.tgz#07ecc61052fec63661a2cab6bd507127c07adc6f"
   integrity sha1-B+zGEFL+xjZhosq2vVBxJ8B63G8=
@@ -4981,6 +5028,11 @@ fast-deep-equal@^3.1.1:
   version "3.1.3"
   resolved "https://packages.atlassian.com/api/npm/npm-remote/fast-deep-equal/-/fast-deep-equal-3.1.3.tgz#3a7d56b559d6cbc3eb512325244e619a65c6c525"
   integrity sha1-On1WtVnWy8PrUSMlJE5hmmXGxSU=
+
+fast-diff@^1.1.2:
+  version "1.2.0"
+  resolved "https://packages.atlassian.com/api/npm/npm-remote/fast-diff/-/fast-diff-1.2.0.tgz#73ee11982d86caaf7959828d519cfe927fac5f03"
+  integrity sha1-c+4RmC2Gyq95WYKNUZz+kn+sXwM=
 
 fast-glob@^3.1.1:
   version "3.2.5"
@@ -5348,6 +5400,11 @@ get-stdin@^4.0.1:
   version "4.0.1"
   resolved "https://packages.atlassian.com/api/npm/npm-remote/get-stdin/-/get-stdin-4.0.1.tgz#b968c6b0a04384324902e8bf1a5df32579a450fe"
   integrity sha1-uWjGsKBDhDJJAui/Gl3zJXmkUP4=
+
+get-stdin@^6.0.0:
+  version "6.0.0"
+  resolved "https://packages.atlassian.com/api/npm/npm-remote/get-stdin/-/get-stdin-6.0.0.tgz#9e09bf712b360ab9225e812048f71fde9c89657b"
+  integrity sha1-ngm/cSs2CrkiXoEgSPcf3pyJZXs=
 
 get-stream@^4.0.0:
   version "4.1.0"
@@ -9073,6 +9130,18 @@ prepend-http@^1.0.0:
   resolved "https://packages.atlassian.com/api/npm/npm-remote/prepend-http/-/prepend-http-1.0.4.tgz#d4f4562b0ce3696e41ac52d0e002e57a635dc6dc"
   integrity sha1-1PRWKwzjaW5BrFLQ4ALlemNdxtw=
 
+prettier-linter-helpers@^1.0.0:
+  version "1.0.0"
+  resolved "https://packages.atlassian.com/api/npm/npm-remote/prettier-linter-helpers/-/prettier-linter-helpers-1.0.0.tgz#d23d41fe1375646de2d0104d3454a3008802cf7b"
+  integrity sha1-0j1B/hN1ZG3i0BBNNFSjAIgCz3s=
+  dependencies:
+    fast-diff "^1.1.2"
+
+prettier@^2.2.1:
+  version "2.2.1"
+  resolved "https://packages.atlassian.com/api/npm/npm-remote/prettier/-/prettier-2.2.1.tgz#795a1a78dd52f073da0cd42b21f9c91381923ff5"
+  integrity sha1-eVoaeN1S8HPaDNQrIfnJE4GSP/U=
+
 pretty-bytes@^5.3.0:
   version "5.6.0"
   resolved "https://packages.atlassian.com/api/npm/npm-remote/pretty-bytes/-/pretty-bytes-5.6.0.tgz#356256f643804773c82f64723fe78c92c62beaeb"
@@ -11148,7 +11217,7 @@ typedarray@^0.0.6:
   resolved "https://packages.atlassian.com/api/npm/npm-remote/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
   integrity sha1-hnrHTjhkGHsdPUfZlqeOxciDB3c=
 
-typescript@^4.1.2:
+typescript@^4.2.3:
   version "4.2.3"
   resolved "https://packages.atlassian.com/api/npm/npm-remote/typescript/-/typescript-4.2.3.tgz#39062d8019912d43726298f09493d598048c1ce3"
   integrity sha1-OQYtgBmRLUNyYpjwlJPVmASMHOM=

@@ -1,10 +1,14 @@
 import React, { ReactElement } from "react";
-import "./styles.sass";
 
 export default function SearchPage(): ReactElement {
   return (
-    <div className="App">
+    <div className="container is-max-desktop">
       <header className="App-header">
+        <input
+          className="input is-primary"
+          type="text"
+          placeholder="Primary input"
+        />
         <p>
           Edit <code>src/App.tsx</code> and save to reload.
         </p>

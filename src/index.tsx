@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
+import "./index.sass";
 import { SearchPage } from "./pages";
 import reportWebVitals from "./reportWebVitals";
 

@@ -14,24 +14,6 @@ export const SEARCH_PHOTOS_QUERY = gql`
         title
         url
       }
-      links {
-        first {
-          page
-          limit
-        }
-        prev {
-          page
-          limit
-        }
-        next {
-          page
-          limit
-        }
-        last {
-          page
-          limit
-        }
-      }
       meta {
         totalCount
       }

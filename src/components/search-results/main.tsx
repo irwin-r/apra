@@ -70,7 +70,7 @@ export default function SearchResults({
       <Pagination
         currentPage={page}
         setPage={setPage}
-        totalPages={Math.ceil(data.photos.meta.totalCount / page)}
+        totalPages={Math.ceil(data.photos.meta.totalCount / RESULTS_PER_PAGE)}
       />
     </main>
   );

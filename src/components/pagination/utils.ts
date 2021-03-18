@@ -11,5 +11,5 @@ export function getPages(currentPage: number, totalPages: number): number[] {
     currentPage - offset - 1,
     currentPage - offset,
     currentPage - offset + 1,
-  ];
+  ].filter((page) => page >= 1 && page <= totalPages);
 }

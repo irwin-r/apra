@@ -1,7 +1,8 @@
 import { ChangeEventHandler, ReactElement, useCallback, useState } from "react";
 import debounce from "lodash/debounce";
 
-import { SearchBar, SearchResults } from "../../components";
+import { SearchBar } from "../../components/search-bar";
+import { SearchResults } from "../../components/search-results";
 
 const SEARCH_DEBOUNCE_MS = 150;
 

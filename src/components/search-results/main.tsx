@@ -1,11 +1,17 @@
 import { useLazyQuery } from "@apollo/client";
-
 import { useDebounce } from "react-use";
 import { ReactElement } from "react";
+
+import {
+  Error,
+  Loading,
+  NoResultsFound,
+  NotCalledYet,
+} from "../non-ideal-states";
 import { SEARCH_PHOTOS_QUERY } from "./queries";
 import { SearchResultsProps } from "./types";
-import Error from "../non-ideal-states/error";
-import { Loading, NoResultsFound, NotCalledYet } from "../non-ideal-states";
+import { SearchResultsHeader } from "../search-results-header";
+import { SearchResult, SearchResultProps } from "../search-result";
 
 export default function SearchResults({
   searchText,
@@ -31,14 +37,33 @@ export default function SearchResults({
   if (loading) {
     return <Loading />;
   }
-  //
+
   if (!called || searchText === "") {
     return <NotCalledYet />;
   }
 
-  if (data.photos.data.length === 0) {
+  const photos: SearchResultProps[] = data?.photos?.data ?? [];
+
+  if (photos.length === 0) {
     return <NoResultsFound />;
   }
 
-  return <div>{JSON.stringify(data)}</div>;
+  return (
+    <main>
+      <table className="table is-fullwidth">
+        <SearchResultsHeader />
+        <tbody>
+          {photos.map(({ id, thumbnailUrl, title, url }) => (
+            <SearchResult
+              id={id}
+              key={`photo-${id}`}
+              thumbnailUrl={thumbnailUrl}
+              title={title}
+              url={url}
+            />
+          ))}
+        </tbody>
+      </table>
+    </main>
+  );
 }

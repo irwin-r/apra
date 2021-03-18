@@ -14,7 +14,7 @@ export default forwardRef(
     ref: ForwardedRef<HTMLInputElement>
   ): ReactElement => {
     return (
-      <div className="field mt-4 mb-4">
+      <div className="field pt-4">
         <p className="control has-icons-right">
           <input
             className="input is-primary"

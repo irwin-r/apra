@@ -29,7 +29,7 @@ export default function SearchResult({
       <tr className="is-clickable" onClick={handleClick}>
         <td className="is-vcentered">{id}</td>
         <td className="is-vcentered">{title}</td>
-        <td>
+        <td className="is-vcentered">
           <figure className="image is-48x48">
             <img alt={title} src={thumbnailUrl} />
           </figure>

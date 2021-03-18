@@ -24,7 +24,7 @@ export default function SearchPage(): ReactElement {
   );
 
   return (
-    <div className="container is-max-desktop">
+    <div className="container is-max-desktop px-4">
       <SearchBar onChange={handleChange} />
       <SearchResults searchText={searchText} />
     </div>

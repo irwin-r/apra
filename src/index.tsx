@@ -1,13 +1,18 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import { ApolloProvider } from "@apollo/client";
 
-import "./index.sass";
+import { apollo } from "./api";
 import { SearchPage } from "./pages";
 import reportWebVitals from "./reportWebVitals";
 
+import "./index.sass";
+
 ReactDOM.render(
   <React.StrictMode>
-    <SearchPage />
+    <ApolloProvider client={apollo}>
+      <SearchPage />
+    </ApolloProvider>
   </React.StrictMode>,
   document.getElementById("root")
 );

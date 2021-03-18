@@ -1,4 +1,7 @@
 import { forwardRef, ForwardedRef, ReactElement } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSearch } from "@fortawesome/free-solid-svg-icons";
+
 import { SearchBarProps } from "./types";
 
 export default forwardRef(
@@ -11,14 +14,19 @@ export default forwardRef(
     ref: ForwardedRef<HTMLInputElement>
   ): ReactElement => {
     return (
-      <div className="mt-4 mb-4">
-        <input
-          className="input is-primary"
-          placeholder={placeholder}
-          ref={ref}
-          type={type}
-          {...props}
-        />
+      <div className="field mt-4 mb-4">
+        <p className="control has-icons-right">
+          <input
+            className="input is-primary"
+            placeholder={placeholder}
+            ref={ref}
+            type={type}
+            {...props}
+          />
+          <span className="icon is-right">
+            <FontAwesomeIcon icon={faSearch} />
+          </span>
+        </p>
       </div>
     );
   }

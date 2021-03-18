@@ -1,6 +1,5 @@
-import { useLazyQuery } from "@apollo/client";
-import { useDebounce } from "react-use";
-import { ReactElement } from "react";
+import { useQuery } from "@apollo/client";
+import { ReactElement, useLayoutEffect, useState } from "react";
 
 import {
   Error,
@@ -12,23 +11,27 @@ import { SEARCH_PHOTOS_QUERY } from "./queries";
 import { SearchResultsProps } from "./types";
 import { SearchResultsHeader } from "../search-results-header";
 import { SearchResult, SearchResultProps } from "../search-result";
+import { Pagination } from "../pagination";
+
+const RESULTS_PER_PAGE = 10;
 
 export default function SearchResults({
   searchText,
 }: SearchResultsProps): ReactElement {
-  const [searchPhotos, { called, data, error, loading }] = useLazyQuery(
-    SEARCH_PHOTOS_QUERY
-  );
+  const [page, setPage] = useState(1);
 
-  useDebounce(
-    () => {
-      if (searchText !== "") {
-        searchPhotos({ variables: { query: searchText } });
-      }
+  useLayoutEffect(() => {
+    setPage(1);
+  }, [searchText]);
+
+  const { data, error, loading } = useQuery(SEARCH_PHOTOS_QUERY, {
+    skip: searchText === "",
+    variables: {
+      limit: RESULTS_PER_PAGE,
+      page,
+      query: searchText,
     },
-    150,
-    [searchText]
-  );
+  });
 
   if (error) {
     return <Error error={error} />;
@@ -38,7 +41,7 @@ export default function SearchResults({
     return <Loading />;
   }
 
-  if (!called || searchText === "") {
+  if (searchText === "") {
     return <NotCalledYet />;
   }
 
@@ -49,7 +52,7 @@ export default function SearchResults({
   }
 
   return (
-    <main>
+    <main className="content">
       <table className="table is-fullwidth">
         <SearchResultsHeader />
         <tbody>
@@ -64,6 +67,11 @@ export default function SearchResults({
           ))}
         </tbody>
       </table>
+      <Pagination
+        currentPage={page}
+        setPage={setPage}
+        totalPages={Math.ceil(data.photos.meta.totalCount / page)}
+      />
     </main>
   );
 }

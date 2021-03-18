@@ -7,7 +7,7 @@
 
 > A simple image searching tool leveraging a GraphQL API.
 
-### ✨ [Demo](hello)
+### ✨ Demo: [https://apra-35a6f6.netlify.app/](https://apra-35a6f6.netlify.app/)
 
 ## Install
 
